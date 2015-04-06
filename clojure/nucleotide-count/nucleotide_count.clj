@@ -3,7 +3,7 @@
 
 (defn count
   [nucleotide dna]
-  (if (some #(= nucleotide %) [\A \T \C \G])
+  (if (#{\A \T \C \G} nucleotide)
     (get (frequencies dna) nucleotide 0)
     (throw (Exception. "invalid nucleotide"))))
 
